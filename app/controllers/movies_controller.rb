@@ -11,13 +11,14 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @movies = Movie.all
     id = params[:id]
     if id === "title_header"
       @movies = Movie.order("title")
-      @title = "hilite"
+      @title_hilite = "hilite"
     elsif id === "release_date_header"
       @movies = Movie.order("release_date")
-      @release_date = "hilite"
+      @release_date_hilite = "hilite"
     end
   end
 
