@@ -14,8 +14,10 @@ class MoviesController < ApplicationController
     id = params[:id]
     if id === "title_header"
       @movies = Movie.order("title")
+      @title = "hilite"
     elsif id === "release_date_header"
       @movies = Movie.order("release_date")
+      @release_date = "hilite"
     end
   end
 
